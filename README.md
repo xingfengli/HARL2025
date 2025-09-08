@@ -1,4 +1,11 @@
 # HARL2025
+# Human Auditory Representation Learning for Cross-Dialect Bird Species Recognition
+# Overview
+Bird species recognition (BSR) is a critical tool for biodiversity monitoring and ecological health assessment. This study proposes human auditory representation learning, hereafter HARL, a novel approach that integrates gammatone- and Mel-spectrogram features with deep learning architectures, including ResNet50 and multi-head attention (MHA) mechanisms, to address these challenges. Experiments demonstrate that HARL significantly outperforms baseline methods. The combination of gammatone- and Mel-spectrogram features proves particularly effective, with MHA further enhancing generalization across regions. These results highlight the potential of HARL for ecological monitoring and conservation, offering a scalable and accurate solution for automated BSR in diverse geographic contexts. Our work bridges human auditory science and machine learning, providing a foundation for future research in bioacoustics and biodiversity conservation.
+
+![Spectrogram Example](https://github.com/用户名/仓库名/raw/main/image.png)
+
+
 
 # Datasets
 The DB3V dataset was used for all the experiments in this work. 
