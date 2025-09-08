@@ -5,3 +5,11 @@ Run visualization_demo.m to visualize the spectrograms along with their delta va
 Run listFilesAndFolders.m to extract, get, and store the Mel- and Gamma-Spectrograms. \n
 
 Reminder: Do NOT forget to revise the folder paths to suit your devices.
+
+```markdown
+## Setup and Visualization Instructions
+
+- Run `addpath('your_own_specified_path/features/gammatonegram')` to set up required files.  
+- Run `visualization_demo.m` to visualize the spectrograms along with their delta variants.  
+- Run `listFilesAndFolders.m` to extract, get, and store the Mel- and Gamma-Spectrograms.  
+- **Reminder**: Do NOT forget to revise the folder paths to suit your devices.
