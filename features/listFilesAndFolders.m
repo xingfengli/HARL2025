@@ -1,5 +1,4 @@
 function listFilesAndFolders
-    %folderPath='/Users/andrew/Desktop/BV_Nov_Auditory/db3v/data_wav_8s_2/3';
     folderPath='/Volumes/T9/Mac2024/CityU_Research/BV_Nov_Auditory/db3v/data_wav_8s_2/1';
 
     % 获取指定文件夹下的所有内容
@@ -22,8 +21,8 @@ function listFilesAndFolders
                 [melSpecdb,gammaSpecdb]=bv_auditory_demo(audio_path);
                 mdir=[currentItem(1:43),'mel/', currentItem(44:end)];
                 gdir=[currentItem(1:43),'gamma/', currentItem(44:end)];
-                save([mdir,'/',audio(1:end-4),'.mat'], 'melSpecdb'); % 保存变量 A 到 data.mat
-                save([gdir,'/',audio(1:end-4),'.mat'], 'gammaSpecdb'); % 保存变量 A 到 data.mat
+                save([mdir,'/',audio(1:end-4),'.mat'], 'melSpecdb'); 
+                save([gdir,'/',audio(1:end-4),'.mat'], 'gammaSpecdb'); 
                 disp([currentItem,':',num2str( (w/length(wav)) )])
             end
 
