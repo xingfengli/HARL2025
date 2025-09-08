@@ -12,13 +12,31 @@ The DB3V dataset was used for all the experiments in this work.
 Jing, X., Zhang, L., Xie, J., Gebhard, A., Baird, A., & Schuller, B. (2024). DB3V: A Dialect Dominated Dataset of Bird Vocalisation for Cross-corpus Bird Species Recognition, INTERSPEECH 2024, pp. 127-131, Kos, Greece. 
 Zenodo. https://doi.org/10.5281/zenodo.11544734
 
-# Instructions to run codes in features (Matlab 2024b)
-```markdown
+# Instructions to Run Codes in Features (MATLAB 2024b)
+
 ## Setup and Visualization Instructions
 
-- Run `addpath('your_own_specified_path/features/gammatonegram')` to set up required files.  
-- Run `visualization_demo.m` to visualize the spectrograms along with their delta variants.  
-- Run `listFilesAndFolders.m` to extract, get, and store the Mel- and Gamma-Spectrograms.  
-- **Reminder**: Do NOT forget to revise the folder paths to suit your devices.
+To set up and visualize Mel and Gamma spectrograms, follow these steps:
 
-- Note: Zipped extracted features could also be found as follows:[Zipped Features in mat](https://1drv.ms/f/c/f1ce98298ad945ca/EspF2YopmM4ggPHrcAUAAAAB7gAUF3LLA8F9aL1zETtmFQ?e=r1FLv7) 
+1. **Set up the environment**:
+   - Run `addpath('your_own_specified_path/features/gammatonegram')` in MATLAB 2024b to include the required files.
+   - Replace `your_own_specified_path` with the actual path to the `features/gammatonegram` folder on your device.
+
+2. **Visualize spectrograms**:
+   - Run `visualization_demo.m` to generate and display Mel and Gamma spectrograms along with their delta variants.
+
+3. **Extract and store spectrograms**:
+   - Run `listFilesAndFolders.m` to extract, process, and store Mel and Gamma spectrograms.
+
+4. **Access pre-extracted features**:
+   - Download pre-extracted spectrogram features in `.mat` format from: [Zipped Features (OneDrive)](https://1drv.ms/f/c/f1ce98298ad945ca/EspF2YopmM4ggPHrcAUAAAAB7gAUF3LLA8F9aL1zETtmFQ?e=r1FLv7).
+   - Unzip the files to `your_own_specified_path/features/` before running `listFilesAndFolders.m`.
+
+**Resources**:
+- [MATLAB 2024b Documentation](https://www.mathworks.com/help/releases/R2024b/matlab/) for environment setup and scripting.
+- [Download MATLAB 2024b](https://www.mathworks.com/products/matlab.html) to install the required software.
+- [GitHub Markdown Guide](https://docs.github.com/en/get-started/writing-on-github) for formatting this README.
+
+**Reminder**:
+- Ensure all folder paths (e.g., `your_own_specified_path`) are updated to match your local setup.
+- Verify that the OneDrive link is accessible; contact the repository owner if access is restricted.
