@@ -1,7 +1,14 @@
-## Python Model Training and Visualization (Python 3.x)
+## Python Model Training and Visualization (Python 3.8+)
 
 1. **Set up the environment**:
-   - Ensure Python 3.x is installed with required libraries (e.g., NumPy, Matplotlib, TensorFlow/PyTorch, UMAP).
+   - numpy==1.24.4
+   - scipy==1.10.1
+   - torch==2.0.1
+   - torchaudio==2.0.2
+   - torchvision==0.15.2
+   - scikit-learn==1.3.2
+   - matplotlib==3.7.2
+   - umap-learn==0.5.3.
    - Update folder paths in all scripts to match your local setup.
 
 2. **Train Mel spectrogram models**:
