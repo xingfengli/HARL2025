@@ -5,6 +5,7 @@ Bird species recognition (BSR) is a critical tool for biodiversity monitoring an
 
 ![HARL Blockdiagram](https://github.com/xingfengli/HARL2025/blob/main/models/blockdiagram.png)
 
+# Requirements
 
 
 # Datasets
