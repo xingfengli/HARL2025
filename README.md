@@ -67,11 +67,11 @@ To set up and visualize Mel and Gamma spectrograms, follow these steps:
 5. **Visualize results**:
    - Run `ROC.py` and `UMAPs.py` to generate ROC curves and UMAP visualizations.
 
-## Resources
+**Resources**:
 
 - [Python 3 Documentation](https://docs.python.org/3/) for Python environment setup.
 
-## Reminders
+**Reminder**:
 
 - Update all folder paths (e.g., `your_own_specified_path`) to match your local setup for MATLAB and Python.
 - For Python scripts, adjust paths for other `DmDn` cases (e.g., D1D3) as needed.
