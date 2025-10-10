@@ -41,7 +41,7 @@ To set up and visualize Mel and Gamma spectrograms, follow these steps:
 - Ensure all folder paths (e.g., `your_own_specified_path`) are updated to match your local setup.
 - Verify that the OneDrive link is accessible; contact the repository owner if access is restricted.
 
-# Instructions to Run Python Model Training and Visualization (Python 3.8+)
+# Instructions to Run Python Model Training and Visualization (Python 3.8+, 4060 Ti, 64GB)
 
 1. **Set up the environment**:
    - numpy==1.24.4
