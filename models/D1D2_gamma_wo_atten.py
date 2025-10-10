@@ -143,53 +143,54 @@ region_paths = {
 }
 
 # 模型训练函数
-def train_model(model, criterion, optimizer, train_loader, num_epochs=40, save_epoch=None):
+# 训练函数
+def train_model(model, criterion, optimizer, train_loader, val_loader_1=None, val_loader_2=None, num_epochs=40):
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=5, verbose=True)
     best_model_wts = None
-    best_loss = float('inf')
+    best_f1_sum = 0.0
 
     for epoch in range(num_epochs):
         model.train()
         running_loss = 0.0
         running_corrects = 0
-
-        for inputs, labels in train_loader:
-            inputs, labels = inputs.float().to(device), labels.to(device)
+        for (gamma, mel), labels in train_loader:
+            gamma = gamma.float().to(device)
+            mel = mel.float().to(device)
+            labels = labels.to(device)
             optimizer.zero_grad()
-            outputs = model(inputs)
+            outputs = model(gamma, mel)
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
-
             _, preds = torch.max(outputs, 1)
-            running_loss += loss.item() * inputs.size(0)
+            running_loss += loss.item() * gamma.size(0)
             running_corrects += torch.sum(preds == labels.data)
-
-            del inputs, labels, outputs, preds
+            del gamma, mel, labels, outputs, preds
             torch.cuda.empty_cache()
 
         epoch_loss = running_loss / len(train_loader.dataset)
         epoch_acc = running_corrects.double() / len(train_loader.dataset)
-        print(f'Epoch {epoch + 1}/{num_epochs}: Train Loss: {epoch_loss:.4f} Acc: {epoch_acc:.4f}')
+        print(f'Epoch {epoch+1}/{num_epochs}: Train Loss: {epoch_loss:.4f} Acc: {epoch_acc:.4f}')
 
-        # 更新学习率调度器
+        f1_r2, f1_r3 = 0.0, 0.0
+        if val_loader_1 is not None:
+            f1_r2 = evaluate_model(model, val_loader_1, region_name="Validation Region 2")
+        if val_loader_2 is not None:
+            f1_r3 = evaluate_model(model, val_loader_2, region_name="Validation Region 1")
+
+        f1_sum = f1_r2 + f1_r3
+        if f1_sum > best_f1_sum:
+            best_f1_sum = f1_sum
+            best_model_wts = model.state_dict()
+            torch.save(best_model_wts, "multi_branch_cnn_g_wo_train1_d.pth")
+            print(f"New best model saved! F1_sum={f1_sum:.4f} (Region2={f1_r2:.4f}, Region3={f1_r3:.4f})")
+
         scheduler.step(epoch_loss)
 
-        # 保存当前最优模型
-        if epoch_loss < best_loss:
-            best_loss = epoch_loss
-            best_model_wts = model.state_dict()
+    if best_model_wts is not None:
+        model.load_state_dict(best_model_wts)
+        print(f"Training finished. Best model saved as 'multi_branch_cnn_g_wo_train1_d.pth' with F1_sum={best_f1_sum:.4f}")
 
-    if save_epoch is not None and epoch + 1 == save_epoch:
-        torch.save(model.state_dict(), f"model_epoch_{save_epoch}.pth")
-        print(f"Model saved at epoch {save_epoch} to'model_epoch_{save_epoch}.pth'")
-
-    # 加载最优模型权重
-    model.load_state_dict(best_model_wts)
-
-    # 保存模型到文件
-    torch.save(best_model_wts, "multi_branch_cnn_g_wo_train1_d.pth")
-    print("Best model saved to 'best_model.pth'")
 
 
 # 模型评估函数
@@ -220,15 +221,30 @@ def evaluate_model(model, test_loader, region_name=None):
     accuracy = running_corrects.double() / len(test_loader.dataset)
     print(f'Test Accuracy for {region_name}: {accuracy:.4f}, UAR: {recall:.4f}, F1 Score: {f1:.4f}')
 if __name__ == '__main__':
-    model = MultiBranchCNN_G_WO(num_classes=len(bird_classes)).to(device)
+    model = MultiBranchCNN_G_M_WI(num_classes=len(bird_classes)).to(device)
     criterion = FocalLoss(alpha=0.25, gamma=2, num_classes=len(bird_classes)).to(device)
     optimizer = optim.AdamW(model.parameters(), lr=1e-4, weight_decay=1e-5)
 
-# 加载数据
+
+
     data_loaders = load_data(region_paths, bird_classes)
 
-# 训练模型
-    train_model(model, criterion, optimizer, data_loaders['train'], num_epochs=40,save_epoch=40)
 
-# 评估模型
+    train_model(model, criterion, optimizer,
+                train_loader=data_loaders['train'],
+                # val_loader_1=data_loaders['test_region3'],
+                val_loader_2=data_loaders['test_region2'],
+                num_epochs=40)
+
+    # 加载最佳模型进行最终测试
+    print("\n=== Loading Best Model for Final Testing ===")
+    best_model_path = "multi_branch_cnn_g_wo_train1_d.pth"
+    model.load_state_dict(torch.load(best_model_path))
+    model.to(device)
+    model.eval()
+
+    # print("\n=== Testing on Region 3 ===")
+    # evaluate_model(model, data_loaders['test_region3'], "Region 3")
+    print("\n=== Testing on Region 2 ===")
     evaluate_model(model, data_loaders['test_region2'], "Region 2")
+
