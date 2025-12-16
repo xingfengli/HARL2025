@@ -6,13 +6,9 @@ Bird species recognition (BSR) is a critical tool for biodiversity monitoring an
 ![HARL Blockdiagram](https://github.com/xingfengli/HARL2025/blob/main/models/blockdiagram.png)
 
 # Datasets
-The DB3V ans S1-S2 datasets were used for all the experiments in this work. 
-1. Jing, X., Zhang, L., Xie, J., Gebhard, A., Baird, A., & Schuller, B. (2024). DB3V: A Dialect Dominated Dataset of Bird Vocalisation for Cross-corpus Bird Species Recognition, INTERSPEECH 2024, pp. 127-131, Kos, Greece. 
-Zenodo. https://doi.org/10.5281/zenodo.11544734
-
 **The DB3V and S1–S2 datasets were used for all experiments in this work.**
 
-**Reference**
+**Reference 1**
 1. Jing, X., Zhang, L., Xie, J., Gebhard, A., Baird, A., & Schuller, B. (2024). *DB3V: A Dialect Dominated Dataset of Bird Vocalisation for Cross-corpus Bird Species Recognition*. INTERSPEECH 2024, pp. 127–131, Kos, Greece. **Zenodo**. https://doi.org/10.5281/zenodo.11544734
 
 
@@ -31,9 +27,8 @@ Zenodo. https://doi.org/10.5281/zenodo.11544734
 | Tringa semipalmata (Willet) | 8 | 138   | 29  | 106  | Call | 1.5–2.5 |
 | Turdus migratorius (American Robin) | 9 | 1,038 | 187 | 791  | Song | 1.8–3.7 |
 
-
-3. Morgan MM, Braasch J. Open set classification strategies for long-term environmental field recordings for bird species recognition. The Journal of the Acoustical Society of America. 2022 Jun 1;151(6):4028-38.
-https://zenodo.org/records/6456604
+**Reference 2**
+2. Morgan MM, Braasch J. Open set classification strategies for long-term environmental field recordings for bird species recognition. The Journal of the Acoustical Society of America. 2022 Jun 1;151(6):4028-38. **Zenodo**.https://zenodo.org/records/6456604
 
 ### Distribution of overlapping species in S1 (Albany) and S2 (Lake George)
 
