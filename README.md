@@ -10,7 +10,7 @@ Bird species recognition (BSR) is a critical tool for biodiversity monitoring an
 
 1. Jing, X., Zhang, L., Xie, J., Gebhard, A., Baird, A., & Schuller, B. (2024). *DB3V: A Dialect Dominated Dataset of Bird Vocalisation for Cross-corpus Bird Species Recognition*. INTERSPEECH 2024, pp. 127–131, Kos, Greece. **Zenodo**. https://doi.org/10.5281/zenodo.11544734
 
-### Summary of the DB3V dataset composition
+### Summary of the DB3V dataset
 
 | Species (Common name) | Code | D1 (Western Cordillera) | D2 (Interior Plains) | D3 (Eastern Highlands) | Sound Type | Freq. (kHz) |
 |---|---:|---:|---:|---:|---|---|
@@ -27,7 +27,7 @@ Bird species recognition (BSR) is a critical tool for biodiversity monitoring an
 
 2. Morgan MM, Braasch J. Open set classification strategies for long-term environmental field recordings for bird species recognition. The Journal of the Acoustical Society of America. 2022 Jun 1;151(6):4028-38. **Zenodo**.https://zenodo.org/records/6456604
 
-### Distribution of overlapping species in S1 (Albany) and S2 (Lake George)
+### Summary of the S1 (Albany) and S2 (Lake George) dataset
 
 | Species (Common name) | Code | S1 | S2 | Sound Type |
 |---|---|---:|---:|---|
