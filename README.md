@@ -28,6 +28,7 @@ Bird species recognition (BSR) is a critical tool for biodiversity monitoring an
 | Turdus migratorius (American Robin) | 9 | 1,038 | 187 | 791  | Song | 1.8–3.7 |
 
 **Reference 2**
+
 2. Morgan MM, Braasch J. Open set classification strategies for long-term environmental field recordings for bird species recognition. The Journal of the Acoustical Society of America. 2022 Jun 1;151(6):4028-38. **Zenodo**.https://zenodo.org/records/6456604
 
 ### Distribution of overlapping species in S1 (Albany) and S2 (Lake George)
