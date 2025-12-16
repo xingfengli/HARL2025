@@ -28,6 +28,18 @@ Zenodo. https://doi.org/10.5281/zenodo.11544734
 
 3. Morgan MM, Braasch J. Open set classification strategies for long-term environmental field recordings for bird species recognition. The Journal of the Acoustical Society of America. 2022 Jun 1;151(6):4028-38.
 https://zenodo.org/records/6456604
+
+### Distribution of overlapping species in S1 (Albany) and S2 (Lake George)
+
+| Species (Common name) | Code | S1 | S2 | Sound Type |
+|---|---|---:|---:|---|
+| Eastern chipmunk “chuck” (*Tamias striatus*) | ECMK | 537 | 1,161 | Call |
+| Fall field cricket (*Gryllus pennsylvanicus*) | FFCR | 5,296 | 6,101 | Song |
+| Eastern chipmunk “chirp” (*Tamias striatus*) | ECMC | 101 | 2,305 | Call |
+| American robin (*Turdus migratorius*) | AMRO | 1,411 | 5,554 | Song |
+| American crow (*Corvus brachyrhynchos*) | AMCR | 221 | 1,477 | Call |
+| Blue jay (*Cyanocitta cristata*) | BLJA | 770 | 1,002 | Call |
+
 # Instructions to Run Codes in Features (MATLAB 2024b)
 
 ## Setup and Visualization Instructions
