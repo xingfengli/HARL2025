@@ -10,6 +10,12 @@ The DB3V ans S1-S2 datasets were used for all the experiments in this work.
 1. Jing, X., Zhang, L., Xie, J., Gebhard, A., Baird, A., & Schuller, B. (2024). DB3V: A Dialect Dominated Dataset of Bird Vocalisation for Cross-corpus Bird Species Recognition, INTERSPEECH 2024, pp. 127-131, Kos, Greece. 
 Zenodo. https://doi.org/10.5281/zenodo.11544734
 
+**The DB3V and S1–S2 datasets were used for all experiments in this work.**
+
+**Reference**
+1. Jing, X., Zhang, L., Xie, J., Gebhard, A., Baird, A., & Schuller, B. (2024). *DB3V: A Dialect Dominated Dataset of Bird Vocalisation for Cross-corpus Bird Species Recognition*. INTERSPEECH 2024, pp. 127–131, Kos, Greece. **Zenodo**. https://doi.org/10.5281/zenodo.11544734
+
+
 ### Summary of the DB3V dataset composition
 
 | Species (Common name) | Code | D1 (Western Cordillera) | D2 (Interior Plains) | D3 (Eastern Highlands) | Sound Type | Freq. (kHz) |
